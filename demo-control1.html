@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Demo Control</title>
+	<link rel="stylesheet" href="">
+
+	<script language ="javascript">
+	function volChange(){
+		var volText = document.getElementById("vol-value");
+		var vol = document.getElementById("vol");
+		volText.value = vol.value;
+		return false;
+	}
+
+	function volValueChange(){
+		var volText = document.getElementById("vol-value");
+		var vol = document.getElementById("vol");
+		vol.value = volText.value;
+		return false;
+	}
+	</script>
+</head>
+<body>
+	<h2>Demo Using Controls</h2>
+	<form>
+	StudentID: <input type="password" name="stuID" placeholder="STU0000" /><br/>
+	FullName: <input type="text" name="name" placeholder="Pham Nhat Hao" value="HaoPN" /><br/>
+	Gender: <select name="gender" multiple>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select>
+	<br/>
+	Birthday <input type="date"/>
+	<br/>
+	<!--How old are you? <input type="radio" name="age" value="u24"> Under 24 &nbsp;&nbsp;&nbsp;
+	<input type="radio" name="age" value="25-34"> 25-34 &nbsp;&nbsp;&nbsp;
+	<input type="radio" name="age" value="35-44"> 35-44 &nbsp;&nbsp;&nbsp;
+	<input type="radio" name="age" value="g45"> 45+
+	<br/> -->
+	What type of music do you listen to? <input type="checkbox" name="music" value="punkrock"> Punk rock &nbsp;&nbsp;&nbsp;
+	<input type="checkbox" name="music" value="indierock" id="indie"> <label for ="indie">Indie rock </label> &nbsp;&nbsp;&nbsp;
+	<input type="checkbox" name="music" value="hiphop"> Hiphop &nbsp;&nbsp;&nbsp;
+	<input type="checkbox" name="music" value="rockabilly"> Rockabilly &nbsp;&nbsp;&nbsp;
+	<br/>
+	
+	Description:: <textarea name="description">This is area content</textarea> <br/>
+	Picture: <input type="file"/>
+	</br>
+	<input type="hidden" name="my-secret-date" value="this is my data"/>
+	
+	Input a number: <input type="number"/>
+	</br>
+	
+	Change volumn: <input id="vol" type="range" min="0" max="100" value="30" name="vol" onchange= "return volChange();">
+	<input type="number" id="vol-value" onchange="return volValueChange();">
+	</br>
+
+	Color: <input type="color" name="color">
+	</br>
+	
+	<input type="submit" name="btnOK" value="Create">
+	<input type="reset" value="Reset">
+
+	</form>
+</body>
+</html>
